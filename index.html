@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Directory</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <!-- Manual CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Book Directory</a>
+            <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="toggler-icon top-bar"></span>
+                <span class="toggler-icon middle-bar"></span>
+                <span class="toggler-icon bottom-bar"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Sell</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Buy</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-8 pb-sm-4 pb-2">
+                <h1>Book Directory</h1>
+            </div>
+            <div class="col-sm-4 col-12 text-sm-end pb-sm-0 pb-2">
+                <a href="/addBook" class="btn btn-primary w-auto">Add Book</a>
+            </div>
+            <div class="col-sm-12 mb-5">
+                <!-- genre filter form -->
+                <form action="">
+                    <div class="mb-3 input-group">
+                        <select id="bookSelect" class="form-select" name="genre">
+                            <option value="all">All Genres</option>
+                            <option value="Crime">Crime</option>
+                            <option value="Horror">Horror</option>
+                            <option value="Thriller">Thriller</option>
+                            <option value="Travel">Travel</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary">Apply</button>
+                    </div>
+
+                </form>
+            </div>
+            <div class="col-12">
+                <div class="row align-items-center" id="bookContainer1">
+                    <div class="col-lg-2 col-6 mb-4">
+                        <img src="/images/7habits.png" alt="" class="w-100">
+                    </div>
+                    <div class="col-lg-9">
+                        <h2>
+                            The 7 Habits of Highly Effective People
+                        </h2>
+                        <p>
+                            The 7 Habits of Highly Effective People is a self-help book written by Stephen R. Covey. It
+                            was
+                            published in 1989 by Simon & Schuster. Covey presents an approach to being effective in
+                            attaining
+                            goals by aligning oneself to what he calls "true north" principles based on a character
+                            ethic that
+                            he presents as universal and timeless.
+                        </p>
+                        <p>
+                            <span class="badge rounded-pill text-bg-info">Travel</span>
+                            <span class="badge rounded-pill text-bg-info">Info</span>
+                        </p>
+                    </div>
+                    <div class="col-lg-1">
+                        <button type="button" class="btn btn-primary my-1"
+                            onclick="window.location.href='editBook.html'">
+                            <i class="bi bi-pencil"></i>
+                            Edit
+                        </button>
+                        <br>
+                        <button type="button" class="btn btn-danger my-1" onClick="deleteBook(1)">
+                            <i class="bi bi-trash"></i>
+                            Delete
+                        </button>
+                    </div>
+                    <hr class="my-4">
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-2 col-6 mb-4">
+                        <img src="/images/goodtogreat.png" alt="" class="w-100">
+                    </div>
+                    <div class="col-lg-9">
+                        <h2>
+                            Good to Great
+                        </h2>
+                        <p>
+                            Good to Great: Why Some Companies Make the Leap... and Others Don't is a management book
+                            written by Jim Collins that describes how companies transition from being good companies to
+                            great
+                            companies and how long it takes to make the transition. The book was published in 2001 by
+                            HarperBusiness, an imprint of HarperCollins.
+                        </p>
+                    </div>
+                    <div class="col-lg-1">
+                        <button type="button" class="btn btn-primary my-1"
+                            onclick="window.location.href='editBook.html'">
+                            <i class="bi bi-pencil"></i>
+                            Edit
+                        </button>
+                        <br>
+                        <button type="button" class="btn btn-danger my-1">
+                            <i class="bi bi-trash"></i>
+                            Delete
+                        </button>
+                    </div>
+                    <hr class="my-4">
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-2 col-6 mb-4">
+                        <img src="/images/richdad.png" alt="" class="w-100">
+                    </div>
+                    <div class="col-lg-9">
+                        <h2>
+                            Rich Dad Poor Dad
+                        </h2>
+                        <p>
+                            Rich Dad Poor Dad is a 1997 book written by Robert Kiyosaki and Sharon Lechter. It advocates
+                            the
+                            importance of financial literacy, financial independence and building wealth through
+                            investing
+                            in assets, real estate investing, starting and owning businesses, as well as increasing
+                            one's
+                            financial intelligence to improve one's business and financial aptitude.
+                        </p>
+                    </div>
+                    <div class="col-lg-1">
+                        <button type="button" class="btn btn-primary my-1"
+                            onclick="window.location.href='editBook.html'">
+                            <i class="bi bi-pencil"></i>
+                            Edit
+                        </button>
+                        <br>
+                        <button type="button" class="btn btn-danger my-1">
+                            <i class="bi bi-trash"></i>
+                            Delete
+                        </button>
+                    </div>
+                    <hr class="my-4">
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-2 col-6 mb-4">
+                        <img src="/images/thefix.png" alt="" class="w-100">
+                    </div>
+                    <div class="col-lg-9">
+                        <h2>
+                            The Fix
+                        </h2>
+                        <p>
+                            Women are told that if they want to succeed at work, they need to fix themselves. Lean in,
+                            don’t lean out. Be a fighter
+                            and a rule-breaker to be a #Girlboss. Stop being nice and start acting like a man.
+
+                            But now Michelle King – gender equality expert and Head of The Global Innovation Coalition
+                            for Change at UN Women – is
+                            calling BS on books and programs that tell women they need to change to be successful.
+                        </p>
+                    </div>
+                    <div class="col-lg-1">
+                        <button type="button" class="btn btn-primary my-1"
+                            onclick="window.location.href='editBook.html'">
+                            <i class="bi bi-pencil"></i>
+                            Edit
+                        </button>
+                        <br>
+                        <button type="button" class="btn btn-danger my-1">
+                            <i class="bi bi-trash"></i>
+                            Delete
+                        </button>
+                    </div>
+                    <hr class="my-4">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+
+    <script src="/js/index.js"></script>
+</body>
+
+</html>
